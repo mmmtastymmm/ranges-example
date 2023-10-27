@@ -4,4 +4,4 @@ project(views_fun)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(views_fun main.cpp
-               examples.h)
+               views_fun.h)

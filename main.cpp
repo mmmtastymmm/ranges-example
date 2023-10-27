@@ -1,51 +1,27 @@
-#include <iostream>
-#include <ranges>
-#include <vector>
+#include "views_fun.h"
+#include <map>
 
-auto square(auto input){
-    return input * input;
-}
+// Problems
+// Take a list of the numbers [1,100] and square every 5th number
+// Generate all powers of two greater less than 10,000
+// Print all numbers less than 10,000 that are palindrome numbers (the same forward and backwards)
+// Sum two vectors index by index
 
-[[maybe_unused]] auto non_range1(const std::vector<int>& input){
-    // Unsafe and complicated :(
-    for(int i = 0; i <= input.size(); i++){
-        std::cout << square(input[i]) << std::endl;
-    }
-}
-
-[[maybe_unused]] auto non_range2(const std::vector<int>& input){
-    // Catches errors at runtime
-    for(int i = 0; i <= input.size(); i++){
-        std::cout << square(input.at(i)) << std::endl;
-    }
-}
-
-[[maybe_unused]] auto non_range3(const std::vector<int>& input){
-    // Is correct
-    for(const auto& value : input){
-        std::cout << square(value) << std::endl;
-    }
-}
-
-[[maybe_unused]] auto non_range4(const std::vector<int>& input){
-    // What is the safe way for this since we need two indexes?
-    for(int i = 1; i <= input.size(); i++){
-        std::cout << square(input.at(i)) - square(input.at(i - 1)) << std::endl;
-    }
-}
-
-[[maybe_unused]] auto ranges1(const std::vector<int>& input){
-    // What is the safe way for this since we need two indexes?
-
-}
+int main()
+{
+    auto vector = std::vector<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    auto array = std::list<double> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    auto map = std::map<int, std::string>{{1, "one"}, {2, "two"}};
+    views16(vector);
+    views12(map);
 
 
+//    Part 3
+//    views3(vector);
+//    std::cout << "Separating" << std::endl;
+//    views3(array);
 
-
-
-
-int main() {
-    auto vector = std::vector<int>{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    non_range1(vector);
     return 0;
 }
+
+
