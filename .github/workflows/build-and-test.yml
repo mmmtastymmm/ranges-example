@@ -12,12 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    container: mmmtastymmm/ubuntu-dev:ranges
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Install dependencies
-      run: sudo apt-get install -y cmake g++ catch2
 
     - name: Create Build Directory
       run: mkdir build
