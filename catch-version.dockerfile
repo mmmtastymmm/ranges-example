@@ -27,5 +27,5 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 # Expose the SSH port
 EXPOSE 22
 
-# Set the default command to run the SSH server in the foreground
-CMD ["/usr/sbin/sshd", "-D"]
+## Set the default command to run the SSH server in the foreground
+#CMD ["/usr/sbin/sshd", "-D"]
